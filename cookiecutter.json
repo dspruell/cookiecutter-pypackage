@@ -1,0 +1,10 @@
+{
+  "project_name": "my-package",
+  "project_description": "Brief description of this package.",
+  "project_homepage": "https://www.example.com/my-package/",
+  "module_name": "{{ cookiecutter.project_name.lower().replace('-', '_') }}",
+  "username": "{{ username |default('myname') }}",
+  "full_name": "{{ full_name |default('My Name') }}",
+  "email": "{{ email |default('me@example.com') }}",
+  "license": ["none", "isc", "bsd-2-clause"]
+}

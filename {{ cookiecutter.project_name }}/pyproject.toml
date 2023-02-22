@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "{{ cookiecutter.project_name }}"
+version = "0.0.1"
+authors = [
+    { name="{{ cookiecutter.full_name }}", email="{{ cookiecutter.email }}" },
+]
+description = "{{ cookiecutter.project_description }}"
+readme = "README.md"
+dependencies = [
+    #"requests",
+    #"tabulate",
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+]
+
+[project.scripts]
+hello-world = "{{ cookiecutter.module_name }}:cli"
+
+[project.urls]
+"Homepage" = "{{ cookiecutter.project_homepage }}"
