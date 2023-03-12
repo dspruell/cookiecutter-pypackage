@@ -4,9 +4,14 @@
 """
 
 import argparse
-from json import dumps as json_dumps
 import logging
+from os import linesep
+import pkg_resources
 
+
+__application_name__ = "{{ cookiecutter.project_name }}"
+__version__ = pkg_resources.get_distribution(__application_name__).version
+__full_version__ = f"{__application_name__} {__version__}"
 
 logging.basicConfig(
     level=logging.DEBUG,
@@ -20,6 +25,9 @@ def cli():
     parser.add_argument('name', help='name to greet')
     parser.add_argument('-v', '--verbose', action='store_true',
                         help='be verbose')
+    parser.add_argument('-V', '--version', action='version',
+                        version=__full_version__,
+                        help='print package version')
     args = parser.parse_args()
 
     if args.verbose:
