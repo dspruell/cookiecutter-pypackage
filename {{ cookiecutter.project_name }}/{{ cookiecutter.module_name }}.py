@@ -1,15 +1,11 @@
-"""
-{{ cookiecutter.project_description }}
-
-"""
+"""{{ cookiecutter.project_description }}"""
 
 import argparse
 import logging
-
-import pkg_resources
+from importlib.metadata import version
 
 __application_name__ = "{{ cookiecutter.project_name }}"
-__version__ = pkg_resources.get_distribution(__application_name__).version
+__version__ = version(__application_name__)
 __full_version__ = f"{__application_name__} {__version__}"
 
 logging.basicConfig(level=logging.DEBUG, format="[%(levelname)s] %(message)s")
